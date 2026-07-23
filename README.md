@@ -30,6 +30,8 @@ delivered to sales@smartlineindustrial.com.
 
 - Filenames are case-sensitive on GitHub Pages. Image references are all
   lowercase except `carbideEM.jpg`; keep them exactly as they are.
+- Category tiles are all 700x700 so every card renders identically.
+  Category names are live HTML text, not baked into the images.
 - Navigation is anchor-based (`#products`, `#services`, `#catalog`, `#contact`).
 - The catalog table filters and searches client-side. Rows link to the
   quote form; no prices are shown.

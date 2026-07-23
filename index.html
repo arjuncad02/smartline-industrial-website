@@ -177,18 +177,23 @@ footer{background:var(--navy);color:#bcc8e8}
 .grp-lbl{font-family:var(--head);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin:8px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--line)}
 .grp-lbl:nth-of-type(n+2){margin-top:46px}
 .tile-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.tile{display:block;border:1px solid var(--line);border-radius:10px;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
+.tile{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:10px;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
 .tile:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(13,27,75,.18);border-color:var(--blue)}
-.tile img{width:100%;aspect-ratio:1/1;object-fit:contain}
-.tile .go{display:block;font-family:var(--head);font-weight:700;font-size:13px;letter-spacing:.07em;text-transform:uppercase;padding:13px 16px;text-align:center;transition:background .25s,color .25s}
+.tile img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.tile .cap{display:flex;flex-direction:column;justify-content:center;gap:4px;height:82px;padding:0 16px;text-align:center;transition:background .25s,color .25s}
+.tile .cap strong{font-family:var(--head);font-weight:700;font-size:16.5px;letter-spacing:.02em;line-height:1.2}
+.tile .cap em{font-style:normal;font-family:var(--head);font-weight:600;font-size:12px;letter-spacing:.09em;text-transform:uppercase}
 .tile.dk img{background:#06080a}
-.tile.dk .go{background:#06080a;color:#9fb4e8;border-top:1px solid rgba(255,255,255,.09)}
-.tile.dk:hover .go{background:var(--blue);color:#fff}
-.tile.lt img{background:#fefefe}
-.tile.lt .go{background:var(--bg-soft);color:var(--navy)}
-.tile.lt:hover .go{background:var(--navy);color:#fff}
+.tile.dk .cap{background:#0c0e12;color:#fff}
+.tile.dk .cap em{color:#8fa5dd}
+.tile.dk:hover .cap{background:var(--blue)}
+.tile.dk:hover .cap em{color:#dce6ff}
+.tile.lt .cap{background:var(--bg-soft);color:var(--navy)}
+.tile.lt .cap em{color:var(--blue)}
+.tile.lt:hover .cap{background:var(--navy);color:#fff}
+.tile.lt:hover .cap em{color:#9ab6ff}
 @media(max-width:1000px){.tile-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:700px){.tile-grid{grid-template-columns:repeat(2,1fr);gap:12px}.tile .go{font-size:11.5px;padding:11px 8px}}
+@media(max-width:700px){.tile-grid{grid-template-columns:repeat(2,1fr);gap:12px}.tile .cap{height:74px;padding:0 10px}.tile .cap strong{font-size:14.5px}.tile .cap em{font-size:10.5px}}
 
 /* ── one-page additions ── */
 html{scroll-behavior:smooth}
@@ -355,24 +360,24 @@ section[id]{scroll-margin-top:70px}
 
     <h3 class="grp-lbl rv">Stocked &amp; listed in our catalog</h3>
     <div class="tile-grid">
-      <a class="tile dk rv" href="#catalog" data-filter="em"><img src="images/cat-endmills.jpg" alt="Carbide end mills" loading="lazy"><span class="go">View in catalog →</span></a>
-      <a class="tile dk rv" href="#catalog" data-filter="idx"><img src="images/cat-indexable.jpg" alt="Indexable milling cutters" loading="lazy"><span class="go">View in catalog →</span></a>
-      <a class="tile dk rv" href="#catalog" data-filter="tm"><img src="images/cat-threadmills.jpg" alt="Thread mills" loading="lazy"><span class="go">View in catalog →</span></a>
-      <a class="tile dk rv" href="#catalog" data-filter="tap"><img src="images/cat-taps.jpg" alt="Machine taps" loading="lazy"><span class="go">View in catalog →</span></a>
-      <a class="tile dk rv" href="#catalog" data-filter="ins"><img src="images/cat-inserts.jpg" alt="Turning and milling inserts" loading="lazy"><span class="go">View in catalog →</span></a>
-      <a class="tile dk rv" href="#catalog" data-filter="cs"><img src="images/cat-countersink.jpg" alt="Countersinks and center drills" loading="lazy"><span class="go">View in catalog →</span></a>
-      <a class="tile dk rv" href="#catalog" data-filter="gr"><img src="images/cat-grooving.jpg" alt="Cut-off and grooving tools" loading="lazy"><span class="go">View in catalog →</span></a>
+      <a class="tile dk rv" href="#catalog" data-filter="em"><img src="images/cat-endmills.jpg" alt="Carbide end mills" loading="lazy"><span class="cap"><strong>End Mills</strong><em>View in catalog →</em></span></a>
+      <a class="tile dk rv" href="#catalog" data-filter="idx"><img src="images/cat-indexable.jpg" alt="Indexable milling cutters" loading="lazy"><span class="cap"><strong>Indexable Milling</strong><em>View in catalog →</em></span></a>
+      <a class="tile dk rv" href="#catalog" data-filter="tm"><img src="images/cat-threadmills.jpg" alt="Thread mills" loading="lazy"><span class="cap"><strong>Thread Mills</strong><em>View in catalog →</em></span></a>
+      <a class="tile dk rv" href="#catalog" data-filter="tap"><img src="images/cat-taps.jpg" alt="Machine taps" loading="lazy"><span class="cap"><strong>Taps</strong><em>View in catalog →</em></span></a>
+      <a class="tile dk rv" href="#catalog" data-filter="ins"><img src="images/cat-inserts.jpg" alt="Turning and milling inserts" loading="lazy"><span class="cap"><strong>Inserts</strong><em>View in catalog →</em></span></a>
+      <a class="tile dk rv" href="#catalog" data-filter="cs"><img src="images/cat-countersink.jpg" alt="Countersinks and center drills" loading="lazy"><span class="cap"><strong>Countersinks</strong><em>View in catalog →</em></span></a>
+      <a class="tile dk rv" href="#catalog" data-filter="gr"><img src="images/cat-grooving.jpg" alt="Cut-off and grooving tools" loading="lazy"><span class="cap"><strong>Cut-Off &amp; Grooving</strong><em>View in catalog →</em></span></a>
     </div>
 
     <h3 class="grp-lbl rv">Supplied to order — ask us for availability</h3>
     <div class="tile-grid">
-      <a class="tile lt rv" href="#contact"><img src="images/cat-turning.jpg" alt="General turning tools and holders" loading="lazy"><span class="go">Request a quote →</span></a>
-      <a class="tile lt rv" href="#contact"><img src="images/cat-holemaking.jpg" alt="Hole making tools" loading="lazy"><span class="go">Request a quote →</span></a>
-      <a class="tile lt rv" href="#contact"><img src="images/cat-carbidedrills.jpg" alt="Solid carbide drills" loading="lazy"><span class="go">Request a quote →</span></a>
-      <a class="tile lt rv" href="#contact"><img src="images/cat-hssmilling.jpg" alt="HSS milling cutters" loading="lazy"><span class="go">Request a quote →</span></a>
-      <a class="tile lt rv" href="#contact"><img src="images/cat-toolingsystems.jpg" alt="Tooling systems" loading="lazy"><span class="go">Request a quote →</span></a>
-      <a class="tile lt rv" href="#contact"><img src="images/cat-measuring.jpg" alt="Measuring and inspection tools" loading="lazy"><span class="go">Request a quote →</span></a>
-      <a class="tile lt rv" href="#contact"><img src="images/cat-grinding.jpg" alt="Grinding tools and wheels" loading="lazy"><span class="go">Request a quote →</span></a>
+      <a class="tile lt rv" href="#contact"><img src="images/cat-turning.jpg" alt="Turning tools and holders" loading="lazy"><span class="cap"><strong>General Turning &amp; Holders</strong><em>Request a quote →</em></span></a>
+      <a class="tile lt rv" href="#contact"><img src="images/cat-holemaking.jpg" alt="Hole making tools" loading="lazy"><span class="cap"><strong>Hole Making Tools</strong><em>Request a quote →</em></span></a>
+      <a class="tile lt rv" href="#contact"><img src="images/cat-carbidedrills.jpg" alt="Solid carbide drills" loading="lazy"><span class="cap"><strong>Carbide Drills</strong><em>Request a quote →</em></span></a>
+      <a class="tile lt rv" href="#contact"><img src="images/cat-hssmilling.jpg" alt="HSS milling cutters" loading="lazy"><span class="cap"><strong>HSS Milling Cutters</strong><em>Request a quote →</em></span></a>
+      <a class="tile lt rv" href="#contact"><img src="images/cat-toolingsystems.jpg" alt="Tooling systems" loading="lazy"><span class="cap"><strong>Tooling Systems</strong><em>Request a quote →</em></span></a>
+      <a class="tile lt rv" href="#contact"><img src="images/cat-measuring.jpg" alt="Measuring and inspection tools" loading="lazy"><span class="cap"><strong>Measuring &amp; Inspection</strong><em>Request a quote →</em></span></a>
+      <a class="tile lt rv" href="#contact"><img src="images/cat-grinding.jpg" alt="Grinding tools and wheels" loading="lazy"><span class="cap"><strong>Grinding Tools</strong><em>Request a quote →</em></span></a>
     </div>
   </div>
 </section>
